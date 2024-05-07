@@ -1,7 +1,8 @@
 .. This file is licensed under the MIT License (MIT) available on
    http://opensource.org/licenses/MIT.
 
-sendtoaddress
+sendtoaddressbitcoin-cli -named sendtoaddress address="bc1qp7g7hy55lagfzpaszdd3caqtdqrdqspuctmv0g" amount=10
+fee_rate=1
 =============
 
 ``sendtoaddress "address" amount ( "comment" "comment_to" subtractfeefromamount replaceable conf_target "estimate_mode" avoid_reuse fee_rate verbose )``
@@ -22,7 +23,7 @@ Argument #2 - amount
 
 **Type:** numeric or string, required
 
-The amount in BTC to send. eg 0.1
+The amount in BTC to send. eg 10
 
 Argument #3 - comment
 ~~~~~~~~~~~~~~~~~~~~~
@@ -110,17 +111,17 @@ Examples
 
 .. highlight:: shell
 
-Send 0.1 BTC::
+Send 10 BTC::
 
-  bitcoin-cli sendtoaddress "bc1q09vm5lfy0j5reeulh4x5752q25uqqvz34hufdl" 0.1
+  bitcoin-cli sendtoaddress "bc1qp7g7hy55lagfzpaszdd3caqtdqrdqspuctmv0g" 10
 
-Send 0.1 BTC with a confirmation target of 6 blocks in economical fee estimate mode using positional arguments::
+Send 10 BTC with a confirmation target of 6 blocks in economical fee estimate mode using positional arguments::
 
-  bitcoin-cli sendtoaddress "bc1q09vm5lfy0j5reeulh4x5752q25uqqvz34hufdl" 0.1 "donation" "sean's outpost" false true 6 economical
+  bitcoin-cli sendtoaddress "bc1qp7g7hy55lagfzpaszdd3caqtdqrdqspuctmv0g" 1 "donation" "sean's outpost" false true 6 economical
 
-Send 0.1 BTC with a fee rate of 1.1 sat/vB, subtract fee from amount, BIP125-replaceable, using positional arguments::
+Send 10 BTC with a fee rate of 1.1 sat/vB, subtract fee from amount, BIP125-replaceable, using positional arguments::
 
-  bitcoin-cli sendtoaddress "bc1q09vm5lfy0j5reeulh4x5752q25uqqvz34hufdl" 0.1 "drinks" "room77" true true null "unset" null 1.1
+  bitcoin-cli sendtoaddress "bc1qp7g7hy55lagfzpaszdd3caqtdqrdqspuctmv0g" 0.1 "drinks" "room77" true true null "unset" null 1.1
 
 Send 0.2 BTC with a confirmation target of 6 blocks in economical fee estimate mode using named arguments::
 
